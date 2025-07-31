@@ -1,0 +1,28 @@
+@model WebMVC.Models.Company
+
+@if (Model.LLMs != null && Model.LLMs.Any())
+{
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Specialization</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var llm in Model.LLMs)
+            {
+                <tr>
+                    <td>@llm.Name</td>
+                    <td>@llm.Specialization</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">
+        No LLMs found for this company.
+    </div>
+}

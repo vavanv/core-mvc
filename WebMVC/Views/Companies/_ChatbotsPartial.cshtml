@@ -1,0 +1,26 @@
+@model WebMVC.Models.Company
+
+@if (Model.Chatbots != null && Model.Chatbots.Any())
+{
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var chatbot in Model.Chatbots)
+            {
+                <tr>
+                    <td>@chatbot.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">
+        No Chatbots found for this company.
+    </div>
+}
